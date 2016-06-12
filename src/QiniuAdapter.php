@@ -124,7 +124,7 @@ class QiniuAdapter extends AbstractAdapter
         $checkCrc = $config->get('checkCrc', false);
 
         $upload_manager = $this->getUploadManager();
-        list($ret, $error) = $upload_manager->put($token, $path, $contents, $params, $mime, $checkCrc);
+        list($ret, $error) = $upload_manager->putFile($token, $path, $contents, $params, $mime, $checkCrc);
 
         if ($error !== null) {
             $this->logQiniuError($error);
